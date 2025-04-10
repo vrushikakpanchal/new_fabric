@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TexSure - Textile Defect Detection</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </head>    
+<body>
+    <div class="background-pattern"></div>
+    
+    <header>
+        <div class="logo">
+            <h1>Tex<span>Sure</span></h1>
+        </div>
+        <div class="try-model">
+            <button id="tryModelBtn" class="btn-try">
+                <i class="fas fa-microscope"></i> Try Model
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>A Smart Textile Surety and Defect Detection System</h2>
+                <p>TexSure weaves sweetness into quality control, catching imperfections with AI's gentle eye.  Enjoy smoother production and happier customers, knowing every fabric piece is perfectly crafted.</p>
+                <button class="btn-primary">Learn More</button>
+            </div>
+            <div class="hero-image">
+                <img src="{{ url_for('static', filename='img.jpg') }}" alt="Textile inspection illustration">
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <i class="fas fa-search"></i>
+                <h3>Real-time Detection</h3>
+                <p>Identify defects as they occur in the production line</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-list-ul"></i>
+                <h3>Multiple Defect Types</h3>
+                <p>Detects knots, holes, stains, color variations and more</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Analytics Dashboard</h3>
+                <p>Track quality metrics and identify patterns</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal for trying the model -->
+    <div id="modelModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Try Our Defect Detection Model</h2>
+            
+            <div class="upload-section">
+                <label for="imageUpload" class="upload-label">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <span>Upload Fabric Image</span>
+                </label>
+                <input type="file" id="imageUpload" accept="image/*" style="display:none">
+                <div id="imagePreview" class="image-preview">
+                    <p>No image selected</p>
+                </div>
+                <button id="submitBtn" class="btn-submit">Submit for Analysis</button>
+            </div>
+            
+            <div id="resultBox" class="result-box">
+                <h3>Analysis Results</h3>
+                <div class="result-item">
+                    <span class="result-label">Cloth Material:</span>
+                    <span class="result-value">Cotton</span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">Cloth Texture:</span>
+                    <span class="result-value">Abstract</span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">Cloth Color:</span>
+                    <span class="result-value">Blue</span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">Defect Detected:</span>
+                    <span class="result-value defect">Knots</span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">No. of Defect Detected:</span>
+                    <span class="result-value defect">1</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 TexSure. All rights reserved.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

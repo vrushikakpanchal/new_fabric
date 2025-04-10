@@ -1,0 +1,10 @@
+
+path: E:/Fabric Defect Detection/fabric_dataset
+train: images/train
+val: images/val
+test: images/test
+
+names:
+  0: hole
+  1: knot
+  2: stain
